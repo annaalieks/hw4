@@ -30,6 +30,8 @@ const bg = document.querySelector('.bg');
 const textLog = document.querySelector('.text-log');
 const timeLog = document.querySelector('.time-log');
 
+document.addEventListener('DOMContentLoaded', applyState);
+
 function applyState(state) {
     if (state.isOn) {
         btn.textContent = 'Turn off';
