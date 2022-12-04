@@ -48,8 +48,9 @@ function applyInitialState() {
         applyState(currentState);
 	} else {
 		// for local storage with saved data
-		currentState = JSON.parse(localStorage.getItem('state'));
-		applyState(currentState);
+		let updatedState = JSON.parse(localStorage.getItem('state'));
+		applyState(updatedState);
+		currentState.isOn = updatedState.isOn;
 	} 
 }
 
@@ -71,8 +72,9 @@ btn.addEventListener('click', () => {
 	applyState(newState);
 	
 	// Current state update
-	currentState = newState;
+	currentState.isOn = newState.isOn;
+	currentState.lastChange = newState.lastChange;
 
-	// Save curent state into local storage
-	localStorage.setItem('state', JSON.stringify(currentState));
+	// Save current state into local storage
+	localStorage.setItem('state', JSON.stringify(newState));
 });

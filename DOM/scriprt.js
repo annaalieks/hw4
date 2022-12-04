@@ -5,7 +5,6 @@ let headindTwo = document.getElementById('headerTwo');
 
 // - для першого елементу <section>
 let section = document.querySelector('section');
-let firstSectionChild = section.firstElementChild;
 
 // - для елементу списку з текстом 'Пункт 5'
 // let list = document.querySelector('ul');
