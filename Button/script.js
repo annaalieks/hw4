@@ -48,7 +48,7 @@ function applyInitialState() {
         applyState(currentState);
 	} else {
 		// for local storage with saved data
-		let updatedState = JSON.parse(localStorage.getItem('state'));
+		let updatedState = JSON.parse(stateJSON);
 		applyState(updatedState);
 		currentState.isOn = updatedState.isOn;
 	} 
